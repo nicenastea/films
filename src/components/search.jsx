@@ -1,60 +1,44 @@
-import React from "react";
+import {useState} from "react";
 
-class Search extends React.Component {
-    state ={
-        search: '',
-        type: 'all'
-    };
-handleKey = (event)=> {
-    if (event.key === 'Enter'){
-        this.props.searchMovies(this.state.search, this.state.type);
+
+function Search({ cb = Function.prototype }) {
+    const [value, setValue] = useState("");
+   
+    const handleKey = (e) => {
+        if (e.key === "Enter") {
+            handleSubmit();
     }
 };
 
-handleFilter = (event) =>{
-    this.setState(
-        ()=> ({ type: event.target.dataset.type }),
-        () => {
-            this.props.searchMovies(this.state.search, this.state.type);
-        }
-    );
-};
-render() {
-    return <div className="row">
-        <div className="col s12">
-            <div className="input-field">
+    const handleSubmit = () => {
+        cb(value) ;  
+    };
+   
+    return (
+    <div className="row">
+        <div className="input-field col s12">
                 <input
-                    className="validate"
-                    placeholder="search"
                     type="search"
-                    value={this.state.search}
-                    onChange={(e)=> this.setState({search: e.target.value})}
-                    onKeyDown={this.handleKey}/>
-                <button className="btn search-btn teal darken-4"
-                onClick={() => 
-                    this.props.searchMovies(this.state.search, this.state.type)
-                    }
+                    id="search-field"
+                    placeholder="search"
+                    onKeyDown={handleKey}
+                    onChange={(e)=> setValue(e.target.value)}
+                    value={value}
+                />
+                <button 
+                    className="btn orange darken-4"
+                    style={{
+                        position: "absolute",
+                        top: 0,
+                        right: 0,
+                    }}
+                    onClick={handleSubmit}
                 >
                     Search
                 </button>
             </div>
-            <div>
-                <label>
-                    <input className="with-gap" name='type' type='radio' data-type='all' onChange={this.handleFilter} checked={this.state.type === 'all'}/>
-                    <span>All</span>
-                </label>
-                <label>
-                    <input className="with-gap" name='type' type='radio' data-type='movie' onChange={this.handleFilter} checked={this.state.type === 'movie'}/>
-                    <span>Movies only</span>
-                </label>
-                <label>
-                    <input className="with-gap" name='type' type='radio' data-type='series' onChange={this.handleFilter} checked={this.state.type === 'series'}/>
-                    <span>Series only</span>
-                </label>
-            </div>
         </div>
-    </div>
-}
+    );
 }
 
 export {Search}

@@ -1,34 +1,151 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.preloader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 70px auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
-.content{
-  min-height: calc(100vh - 70px - 64px);
-}
-
-.movies{
+.list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: 0.75rem;
+  margin: 50px;
 }
 
-.search-btn{
-  position: absolute;
-  top: 0;
-  right: 0.5rem;
+.card { 
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
 
 }
 
-label:not(:last-child){
-  margin-right: 1rem;
+.card-content {
+  flex-grow: 1;
 }
+
+img
+{
+  max-width: 100%;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+iframe {
+  width: 1000px;
+  height: 550px;
+}
+
+.recipe {
+  display: grid;
+  justify-content: center; 
+
+}
+
+video {
+  display: flex;
+  width: 600px;
+}
+
+
+.orange.darken-4 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.row-contacts {
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.col-lg-2 {
+  text-align: center;
+}
+
+
+.img-dilivery {
+  margin-bottom: 30px;
+}
+
+
+.first-txt-dilivery {
+  text-align: center;
+
+}
+
+
+.col-dil{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 20px;
+}
+
+
+.row-diliv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+
+
+}
+
+.general-dilivery-title, .general-office-title, .general-office-adress
+{
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center; 
+  color: #333333;
+}
+
+.sec-txt-dilivery{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center; 
+  color: #000000;
+}
+
+
+.contacts {
+  justify-content: center;
+  max-width: 80%;
+  margin: 0 auto;
+}
+.contacts-title {
+  text-align: center;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  color: #333333;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.general-dilivery-title, .general-office-title{
+
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center; 
+  color: #333333;
+}
+
+
+
